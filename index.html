@@ -1,12 +1,403 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-</head>
-<body>
-    <h1>Welcome to My Portfolio</h1>
-    <p>This is a basic portfolio page.</p>
-</body>
+  <head>
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio Guntas</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="mediaqueries.css" />
+    <link rel="icon" href="./assets/tabicon.png" />
+  </head>
+  <body>
+    <nav id="desktop-nav">
+      <div class="logo">Guntas Saran</div>
+      <div>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li>
+            <a onclick="window.open('./assets/Guntas_Resume_External.pdf')"
+              >Resume</a
+            >
+          </li>
+          <li><a href="https://guntas-13.github.io/Blog">Blog</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <nav id="hamburger-nav">
+      <div class="logo">Guntas Saran</div>
+      <div class="hamburger-menu">
+        <div class="hamburger-icon" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+          <div class="menu-links">
+            <li><a href="#about" onclick="toggleMenu()">About</a></li>
+            <li>
+              <a href="https://guntas-13.github.io/Blog" onclick="toggleMenu()"
+                >Blog</a
+              >
+            </li>
+            <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+            <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+            <li>
+              <a onclick="window.open('./assets/Guntas_Resume_External.pdf')"
+                >Resume</a
+              >
+            </li>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <section id="profile">
+      <div class="section__pic-container">
+        <img src="./assets/ProfileX.png" alt="Guntas Saran Profile" />
+      </div>
+      <div class="section__text">
+        <p class="section__text_p1">Hi! This is</p>
+        <h1 class="title">Guntas Saran</h1>
+        <p class="section__text_p2">Junior Undergraduate at IIT Gandhinagar</p>
+        <p class="section__text_p3">Computer Science and Engineering</p>
+        <div class="btn-container">
+          <button
+            class="btn btn-color-2"
+            onclick="window.open('./assets/Software_DSA_Engineer_Resume.pdf')"
+          >
+            Download CV
+          </button>
+          <button class="btn btn-color-1" onclick="location.href='./#contact'">
+            Contact Me
+          </button>
+        </div>
+        <div id="socials-container">
+          <img
+            src="./assets/linkedin.png"
+            alt="LinkedIn"
+            class="icon"
+            onclick="location.href='https://www.linkedin.com/in/guntas-singh-saran-2b8811179/'"
+          />
+          <img
+            src="./assets/github.png"
+            alt="Github"
+            class="icon"
+            onclick="location.href='https://www.github.com/guntas-13'"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <p class="section__text_p1">Get to Know More</p>
+      <h1 class="title">About Me</h1>
+      <div class="section-container">
+        <div class="section__pic-container">
+          <img
+            src="./assets/Profile_P1.jpeg"
+            alt="Guntas Profile"
+            ,
+            class="about-pic"
+          />
+        </div>
+
+        <div class="about-details-container">
+          <div class="about-containers">
+            <div class="details-container">
+              <a href="https://amalthea.iitgn.ac.in/"
+                ><img
+                  src="./assets/AML1.png"
+                  alt="experience"
+                  ,
+                  class="icon icon-aml"
+              /></a>
+              <h3>Experience</h3>
+              <p>Core, Amalthea '23<br />Design & Finance</p>
+            </div>
+            <div class="details-container">
+              <img
+                src="./assets/education.png"
+                alt="education"
+                ,
+                class="icon"
+              />
+              <h3>Education</h3>
+              <p>B.Tech Computer Science and Engineering<br />2022 - 2026</p>
+            </div>
+          </div>
+          <div class="text-container">
+            <p>
+              I've always been fascinated by the role of Mathematics in
+              uncovering the intricacies of computing and its ability to solve
+              complex problems. I'm open to working on projects that leverage
+              the synergy between Computing and Mathematics to address
+              real-world challenges. Whether it's developing innovative
+              algorithms, optimizing data analysis techniques, or creating
+              computational models, I am enthusiastic about exploring diverse
+              projects that showcase the powerful intersection of these
+              disciplines. <br />
+              <br />
+              I am keen on developing interactive visual representations of
+              Machine Learning Processes and Physical Models. Currently I'm
+              exploring several domains ranging from Data Science, Computer
+              Organization and Architecture to Applied Machine Learning and
+              Software Development.
+            </p>
+          </div>
+        </div>
+      </div>
+      <img
+        src="./assets/arrow.png"
+        alt="arrow"
+        class="icon arrow"
+        onclick="location.href='./#projects'"
+      />
+    </section>
+
+    <!-- <section id="blog">
+        <p class="section__text_p1">Explore My</p>
+        <h1 class="title">Blog</h1>
+        <div class="blog-details-container">
+            <div class="about-containers">
+                <div class="details-container">
+                    <h2 class="blog-sub-title">Blog 1</h2>
+                    <div class="article-container">
+                        <article>
+                            <img src="./assets/checkmark.png" alt="check" class="icon" />
+                            <div>
+                                <h3>Entry 1</h3>
+                                <p>Sub-Entry</p>
+                            </div>
+                        </article>
+                        
+                        <article>
+                            <img src="./assets/checkmark.png" alt="check" class="icon" />
+                            <div>
+                                <h3>Entry 2</h3>
+                                <p>Sub-Entry2</p>
+                            </div>
+                        </article>
+
+                        <article>
+                            <img src="./assets/checkmark.png" alt="check" class="icon" />
+                            <div>
+                                <h3>Entry 3</h3>
+                                <p>Sub-Entry3</p>
+                            </div>
+                        </article>
+
+                        <article>
+                            <img src="./assets/checkmark.png" alt="check" class="icon" />
+                            <div>
+                                <h3>Entry 3</h3>
+                                <p>Sub-Entry3</p>
+                            </div>
+                        </article>
+
+                        <article>
+                            <img src="./assets/checkmark.png" alt="check" class="icon" />
+                            <div>
+                                <h3>Entry 4</h3>
+                                <p>Sub-Entry4</p>
+                            </div>
+                        </article>
+
+                    </div>
+                </div>
+
+                <div class="details-container">
+                    <h2 class="blog-sub-title">Blog 2</h2>
+                    <div class="article-container">
+                        <article>
+                            <img src="./assets/checkmark.png" alt="check" class="icon" />
+                            <div>
+                                <h3>Entry 6</h3>
+                                <p>Sub-Entry6</p>
+                            </div>
+                        </article>
+                        
+                        <article>
+                            <img src="./assets/checkmark.png" alt="check" class="icon" />
+                            <div>
+                                <h3>Entry 7</h3>
+                                <p>Sub-Entry7</p>
+                            </div>
+                        </article>
+
+                        <article>
+                            <img src="./assets/checkmark.png" alt="check" class="icon" />
+                            <div>
+                                <h3>Entry 8</h3>
+                                <p>Sub-Entry8</p>
+                            </div>
+                        </article>
+
+                        <article>
+                            <img src="./assets/checkmark.png" alt="check" class="icon" />
+                            <div>
+                                <h3>Entry 9</h3>
+                                <p>Sub-Entry9</p>
+                            </div>
+                        </article>
+
+                        <article>
+                            <img src="./assets/checkmark.png" alt="check" class="icon" />
+                            <div>
+                                <h3>Entry 10</h3>
+                                <p>Sub-Entry10</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <img src="./assets/arrow.png" alt="arrow_1" class="icon arrow" onclick="location.href='./#projects'" />
+    </section> -->
+
+    <section id="projects">
+      <p class="section__text_p1">Browse My Recent</p>
+      <h1 class="title">Projects</h1>
+      <div class="blog-details-container">
+        <div class="about-containers">
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img src="./assets/A12.png" alt="Project1" class="project-img" />
+            </div>
+
+            <h2 class="blog-sub-title project-title">
+              Numerical Modelling of Oil Spillage over Water
+            </h2>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://github.com/guntas-13/MA203_Convection-Diffusion_Equation'"
+              >
+                Project Link
+              </button>
+
+              <!-- <button class="btn btn-color-2 project-btn" onclick="location.href='https://www.github.com/guntas-13'">
+                            Video Link
+                        </button> -->
+            </div>
+          </div>
+
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img
+                src="./assets/MLAll.png"
+                alt="Project1"
+                class="project-img"
+              />
+            </div>
+
+            <h2 class="blog-sub-title project-title">
+              Blog on Concepts built from Scratch!
+            </h2>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://guntas-13.github.io/Blog'"
+              >
+                Project Link
+              </button>
+
+              <!-- <button class="btn btn-color-2 project-btn" onclick="location.href='https://www.github.com/guntas-13'">
+                            Video Link
+                        </button> -->
+            </div>
+          </div>
+
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img
+                src="./assets/ML_Scratch.png"
+                alt="Project1"
+                class="project-img"
+              />
+            </div>
+
+            <h2 class="blog-sub-title project-title">
+              Machine Learning Concepts from Scratch
+            </h2>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://github.com/guntas-13/ML_Scratch'"
+              >
+                Project Link
+              </button>
+
+              <!-- <button class="btn btn-color-2 project-btn" onclick="location.href='https://www.github.com/guntas-13'">
+                            Video Link
+                        </button> -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <img
+        src="./assets/arrow.png"
+        alt="arrow_1"
+        class="icon arrow"
+        onclick="location.href='./#contact'"
+      />
+    </section>
+
+    <section id="contact">
+      <p class="section__text_p1">Get in Touch</p>
+      <h1 class="title">Contact Me</h1>
+      <div class="contact-info-upper-container">
+        <div class="contact-info-container">
+          <img
+            src="./assets/email.png"
+            alt="Email"
+            class="icon contact-icon email-icon"
+          />
+          <p>
+            <a href="mailto:guntas.saran13@gmail.com"
+              >guntas.saran13@gmail.com</a
+            >
+          </p>
+        </div>
+
+        <div class="contact-info-container">
+          <img
+            src="./assets/linkedin.png"
+            alt="LinkedIn"
+            class="icon contact-icon"
+          />
+          <p>
+            <a href="https://www.linkedin.com/in/guntas-singh-saran-2b8811179/"
+              >LinkedIn</a
+            >
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <nav>
+        <div class="nav-links-container">
+          <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li>
+              <a onclick="window.open('./assets/Guntas_Resume_External.pdf')"
+                >Resume</a
+              >
+            </li>
+            <li><a href="https://guntas-13.github.io/Blog">Blog</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <p>Copyright &#169; 2024 Guntas Singh Saran. All Rights Reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> -->
+  </body>
 </html>
