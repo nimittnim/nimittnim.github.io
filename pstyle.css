@@ -1,13 +1,25 @@
 a:link, a:visited, a:hover, a:active {
   text-decoration: none;
 }
-a { color: blue; }       
-a:visited { color: rgb(0,0,25); } 
+a { color: white; }       
+a:visited { color:white; } 
 a:hover { color: rgb(255, 0, 0);}
 
 body{
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-weight: 500px;
+}
+
+body {
+  color:white;
+  background: repeating-linear-gradient(
+    90deg,
+    white,
+    black 10px,
+    white 10px,
+    black 20px
+  );
+  height: 2000px;
 }
 
 
@@ -33,7 +45,6 @@ body{
   width: 95%;
   border: 1pt solid black;
   font-family: JetBrains Mono, monospace;
-  /* font-style: italic; */
   font-weight: bold;
   background-color: white;
 }
@@ -65,17 +76,27 @@ body{
 }
 
 .sidebar {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  text-align: right;
   padding-right: 20px;
+  text-align: right;
 }
 
 .sidebar img {
   display: block;
+  margin-left: auto;
 }
 
 .profile-pic {
   border: 1px solid black;
 }
+
+.personal_container{
+  background-color: blue;
+  padding: 10px;
+  height: 2000px;
+  color: white;
+  border: 1pt solid white;
+}
+
+
+
+

@@ -1,13 +1,18 @@
 a:link, a:visited, a:hover, a:active {
   text-decoration: none;
 }
-a { color: blue; }       
-a:visited { color: rgb(0,0,25); } 
-a:hover { color: rgb(255, 0, 0);}
+a { color:white; }       
+a:visited { color: white; } 
+a:hover { color: red;}
 
 body{
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-weight: 500px;
+}
+
+
+.navbar{
+  background-color: white;
 }
 
 
@@ -22,6 +27,7 @@ body{
   margin-bottom: 4px;   
 }
 
+
 .tagline {
   font-family: Verdana, sans-serif;
   margin-top: 0;
@@ -33,9 +39,7 @@ body{
   width: 95%;
   border: 1pt solid black;
   font-family: JetBrains Mono, monospace;
-  /* font-style: italic; */
   font-weight: bold;
-  background-color: white;
 }
 
 .navbar a {
@@ -74,8 +78,25 @@ body{
 
 .sidebar img {
   display: block;
+  margin-left: auto;
 }
 
-.profile-pic {
-  border: 1px solid black;
+
+.row {
+  display: flex;
+  justify-content: flex-end; 
+  gap: 10px;
 }
+
+.column {
+  width: 40%;
+}
+
+.container{
+  background-color: grey;
+  padding: 10px;
+  height: 2000px;
+  color: white;
+  border: 2pt solid black;
+}
+

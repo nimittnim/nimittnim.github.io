@@ -1,13 +1,22 @@
 a:link, a:visited, a:hover, a:active {
   text-decoration: none;
 }
-a { color: blue; }       
-a:visited { color: rgb(0,0,25); } 
-a:hover { color: rgb(255, 0, 0);}
+a { color:white; }       
+a:visited { color: white; } 
+a:hover { color: red;}
 
 body{
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-weight: 500px;
+}
+
+
+.body{
+  background-color: rgb(37, 195, 37);
+}
+
+.navbar{
+  background-color: white;
 }
 
 
@@ -33,7 +42,6 @@ body{
   width: 95%;
   border: 1pt solid black;
   font-family: JetBrains Mono, monospace;
-  /* font-style: italic; */
   font-weight: bold;
 }
 
@@ -73,8 +81,18 @@ body{
 
 .sidebar img {
   display: block;
+  margin-left: auto;
 }
 
-.profile-pic {
-  border: 1px solid black;
+
+.container{
+  background-color:black;
+  padding: 10px;
+  height: 2000px;
+  color: white;
+  border: 3pt solid blue;
+}
+
+.bordered_images_iitgn img{
+  border: 2px solid black;
 }
