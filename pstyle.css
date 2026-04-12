@@ -10,16 +10,8 @@ body{
   font-weight: 500px;
 }
 
-body {
-  color:white;
-  background: repeating-linear-gradient(
-    90deg,
-    white,
-    black 10px,
-    white 10px,
-    black 20px
-  );
-  height: 2000px;
+body{
+  background: white;
 }
 
 
@@ -72,11 +64,12 @@ body {
 }
 
 .sidebar {
-  width: 34%;
+  width: 1%;
 }
 
 .sidebar {
-  padding-right: 20px;
+  padding-left: 10%;
+  padding-right: 23%;
   text-align: right;
 }
 
@@ -85,18 +78,15 @@ body {
   margin-left: auto;
 }
 
-.profile-pic {
-  border: 1px solid black;
-}
-
 .personal_container{
   background-color: blue;
   padding: 10px;
-  height: 2000px;
+  height: 1000px;
   color: white;
   border: 1pt solid white;
 }
 
-
-
-
+.personal_aside{
+  background-color: red;
+  height: 1000px;
+}
