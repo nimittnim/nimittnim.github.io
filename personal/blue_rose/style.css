@@ -1,0 +1,9 @@
+body{
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 500px;
+}
+
+.content {
+  width: 66%;
+  padding-left: 17%;
+}
