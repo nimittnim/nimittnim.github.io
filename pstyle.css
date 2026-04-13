@@ -11,7 +11,7 @@ body{
 }
 
 body{
-  background: white;
+  background: red;
 }
 
 
@@ -51,7 +51,7 @@ body{
 }
 
 .navbar a:hover {
-  background-color:rgb(0,200, 250);
+  background-color:chartreuse;
 }
 
 .layout {
@@ -64,12 +64,12 @@ body{
 }
 
 .sidebar {
-  width: 1%;
+  width: 34%;
 }
 
 .sidebar {
-  padding-left: 10%;
-  padding-right: 23%;
+  padding-left: 0%;
+  padding-right: 20px;
   text-align: right;
 }
 
@@ -87,6 +87,8 @@ body{
 }
 
 .personal_aside{
-  background-color: red;
+  background-color: white;
   height: 1000px;
+  padding:10px;
+  border: 1pt solid black;
 }
