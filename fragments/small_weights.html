@@ -29,6 +29,7 @@
         body {
             padding-left: 20%;
             padding-right:20%;
+            font-size: large;
         }
     </style>
     <link rel="stylesheet" href="style_me_and_my_mother.css">
@@ -40,10 +41,42 @@
         <a href="../index.html">Home</a>
         <a href="../fragments.html">Fragments</a>
       </nav>
-  <h1>Efficiently finding small representations for LTFs</h1>
-  $\pi = 3.14$
+  <h1>Efficiently Finding Small Representations for LTFs</h1>
 
-  
+    <b>Introduction.</b> This post discusses a recent work by <i>Johan Håstad</i>: <i>Efficiently finding small representations for LTFs</i>. Linear Threshold Functions (LTFs) are simple yet interesting class of Boolean functions. Informally, an LTF outputs sign of a linear polynomial over boolean variables; for example, $f(x_1,x_2) = \operatorname{sign}(2x_1+3x_2+5)$. Formally, given coefficients $w = (w_0,w_1,\dots,w_n) \in \mathbb Z^{n+1}$, an LTF is a function $f_w : \{-1,1\}^n \to \{-1,1\}$ defined by
+
+    \[
+    f_w(x)=\operatorname{sign}\!\left (w_0 + \sum_{i=1}^{n}w_i x_i \right) \qquad \text{or} \qquad f_w(x) = (w,x).
+    \]
+
+    The vector w is (a) the representation of the LTF. Therefore, the size of representation is the number of bits required to encode $w$:
+
+    \[
+    O\!\left(\sum_{i=0}^{n}\log (|w_i|+1)\right).
+    \]
+
+    It is well known that every LTF has an equivalent representation whose coefficients require only $O(n\log n)$ bits each. However, given an arbitrary representation, finding such a small one efficiently is not known. Håstad's work studies a polynomial-time algorithm that, starting from any representation, produces an equivalent in which each coefficient can be encoded using only $O(n^2)$ bits.
+
+    <br><br>
+
+    <b>Why should smaller representations exist?</b> A key observation is that many different weight vectors represent exactly the same LTF. Since only the sign of the linear form matters, multiplying all coefficients by a positive constant does not change the function. For example,
+
+    \[
+    \operatorname{sign}(x_1+x_2) =  \operatorname{sign}(2x_1+2x_2) =\operatorname{sign}(100x_1+100x_2).
+    \]
+
+    Thus, large coefficients are often redundant. This naturally suggests the following idea: starting from a representation with large weights, can we reduce the coefficients (by a factor) to obtain smaller ones while preserving the sign? Unfortunately, reducing coefficients naively does not always work. Some inputs may lie very close to the threshold where the linear form changes sign. We need to account for these bad inputs by making some corrections to reduced coefficients in each iteration. Finding this correction can be reduced to finding short vectors in an appropriately constructed Lattice.
+    <br><br>
+
+    <b>Lattices and LLL algorithm.</b> Intuitively, a lattice is discrete analogue of vector space. A lattice spanned by basis vectors $b_1,b_2,\dots,b_m$ is the grid of vectors/points
+    \[
+     \Lambda = \left\{ \sum_{i=1}^m\alpha_ib_i \mid \alpha_i \in \mathbb{R} \right\}
+    \] 
+    Many of interesting problems can be reduced to finding shortest (Euclidean or some other distance) vector in appropriately constructed lattice. 
+    <br><br>
+
+    <b>The lattice construction.</b>
+
 
 </body>
 </html>
