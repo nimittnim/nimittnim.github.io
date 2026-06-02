@@ -1,0 +1,19 @@
+.navbar {
+  width: 100%;
+  border: 1pt solid black;
+  font-family: JetBrains Mono, monospace;
+  font-weight: bold;
+}
+
+.navbar a {
+  padding: 0px 15px;
+  display: inline-block;
+  color: black;
+  text-decoration: none;
+  text-align: center;
+  font-size: large;
+}
+
+.navbar a:hover {
+  background-color:rgb(0,200, 250);
+}
