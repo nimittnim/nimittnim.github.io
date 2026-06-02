@@ -3,7 +3,7 @@ a:link, a:visited, a:hover, a:active {
 }
 a { color: white; }       
 a:visited { color:white; } 
-a:hover { color: rgb(255, 0, 0);}
+a:hover { color: chartreuse;}
 
 body{
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -11,7 +11,7 @@ body{
 }
 
 body{
-  background: red;
+  background: blue;
 }
 
 
@@ -34,8 +34,7 @@ body{
 }
 
 .navbar {
-  width: 95%;
-  border: 1pt solid black;
+  width: 100%;
   font-family: JetBrains Mono, monospace;
   font-weight: bold;
   background-color: white;
@@ -83,12 +82,10 @@ body{
   padding: 10px;
   height: 1000px;
   color: white;
-  border: 1pt solid white;
 }
 
 .personal_aside{
-  background-color: white;
+  background-color: blue;
   height: 1000px;
   padding:10px;
-  border: 1pt solid black;
 }

@@ -34,7 +34,7 @@ body{
 }
 
 .navbar {
-  width: 95%;
+  width: 100%;
   border: 1pt solid black;
   font-family: JetBrains Mono, monospace;
   /* font-style: italic; */

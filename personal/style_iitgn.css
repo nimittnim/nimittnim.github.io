@@ -88,9 +88,7 @@ body{
 .container{
   background-color:black;
   padding: 10px;
-  height: 2000px;
   color: white;
-  border: 2pt solid grey;
 }
 
 .bordered_images_iitgn img{
