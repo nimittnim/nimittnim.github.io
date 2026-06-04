@@ -2,12 +2,13 @@ a:link, a:visited, a:hover, a:active {
   text-decoration: none;
 }
 a { color:rgb(100,200,40); }       
-a:visited { color: rgb(100,200,40); } 
+a:visited { color: rgb(40, 90, 15); } 
 a:hover { color: red;}
 
 body{
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   font-weight: 500px;
+  background-color: purple;
 }
 
 
@@ -56,6 +57,7 @@ body{
 .content {
   width: 66%;
   padding-left: 20px;
+  background-color: orange;
 }
 
 .sidebar {

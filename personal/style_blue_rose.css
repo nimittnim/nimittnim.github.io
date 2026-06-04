@@ -1,8 +1,8 @@
 a:link, a:visited, a:hover, a:active {
   text-decoration: none;
 }
-a { color:black; }       
-a:visited { color: black; } 
+a { color: blue; }       
+a:visited { color: blue; } 
 a:hover { color: red;}
 
 body{
@@ -13,7 +13,7 @@ body{
 }
 
 body{
-  background-color: white;
+  background-color: black;
 }
 
 
@@ -80,6 +80,7 @@ body{
   align-items: flex-end;
   text-align: right;
   padding-right: 20px;
+  background-color: red;
 }
 
 .sidebar img {
