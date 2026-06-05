@@ -42,6 +42,8 @@
   </nav>
 
   <h1>. Efficiently Finding Small Representations for LTFs </h1>
+  <hr>
+  <i>Written by: Nimitt</i>
   <h2>.. Introduction</h2> 
   <p>This post discusses a recent work by <i>Johan Håstad</i>: <i>Efficiently finding small representations for LTFs</i>. Linear Threshold Functions (LTFs) are a simple yet interesting class of Boolean functions. Informally, an LTF outputs the sign of a linear polynomial over boolean variables; for example, $f(x_1,x_2) = \operatorname{sign}(2x_1+3x_2+5)$. Formally, given coefficients $w = (w_0,w_1,\dots,w_n) \in \mathbb{Z}^{n+1}$, an LTF is a function $f_w : \{-1,1\}^n \to \{-1,1\}$ defined by:</p>
 
@@ -49,32 +51,32 @@
 
   <p>The vector $w$ is the representation of the LTF. Therefore, the size of the representation is the number of bits required to encode $w$. It is well known that every LTF has an equivalent representation whose coefficients require only $O(n\log n)$ bits each. However, given an arbitrary representation, finding such a small one efficiently is not known. Håstad's work studies a polynomial-time algorithm that, starting from any representation, produces an equivalent in which each coefficient can be encoded using only $O(n^2)$ bits.</p>
 
-  <h2>.. Existence of smaller representations.</h1>
+  <h2>.. Existence of smaller representations</h1>
   <p> Note that many different weight vectors represent exactly the same LTF. Since only the sign of the linear form matters, multiplying all coefficients by a positive constant does not change the function. Thus, large coefficients are often redundant. This naturally suggests the following idea: starting from a representation with large weights, can we reduce the coefficients (by a factor, dropping the least significant bit) to obtain smaller ones while preserving the sign? Unfortunately, reducing coefficients naively does not always work. Some inputs may lie very close to the threshold where the linear form changes sign, and we must account for these bad inputs. In achieving that, a main tool is finding short vectors in an appropriately constructed lattice.</p>
   
-  <h2>.. Lattices and the LLL algorithm.</h2>
+  <h2>.. Lattices and the LLL algorithm</h2>
   <p></b> Intuitively, a lattice is a discrete analogue of a vector space. A lattice spanned by basis vectors $b_1,b_2,\dots,b_m$ is the "grid" of vectors/points:</p>
   
   $$ \Lambda = \left\{\sum_{i=1}^m\alpha_ib_i \mid \alpha_i \in \mathbb{Z} \right\} $$ 
 
   <p>Many interesting problems can be reduced to finding the shortest vector in an appropriately constructed lattice. While finding the absolute shortest vector is NP-hard, the classical algorithm by Lenstra, Lenstra, and Lovász (LLL) finds a vector in polynomial time whose length is within a factor of $2^{(n-1)/2}$ of the shortest vector. LLL is an iterative algorithm which starts from initial basis of lattice and outputs a "reduced" basis, where each iteration involves some swapping or Gram--Schmidt operation.</p>
   <blockquote>
-    Lemma (LLL works): If $(b_1,\dots,b_n)$ is a $n$-dimensional LLL reduced basis of lattice $Lambda$, then $\|b_1\| \le 2^{(n-1)/2} s(\Lambda)$, where $s(\Lambda)$ is the length of shortest vector in $\Lambda$.
+    Lemma (LLL works): If $(b_1,\dots,b_n)$ is a $n$-dimensional LLL reduced basis of lattice $\Lambda$, then $\|b_1\| \le 2^{(n-1)/2} s(\Lambda)$, where $s(\Lambda)$ is the length of shortest vector in $\Lambda$.
   </blockquote>
 
 
   <h2>.. Main Algorithm</h2>
 
-  <p>We start with initial integer weights $w_i$ that are massive, specifically where $\|w\| = 2^l \ge 2^{4n^2}$. We construct a lattice $\Lambda_m$ of dimension $n+1$ residing in an $n+2$ dimensional space.</p>
+  <p>We start with learge initial integer weights $w_i$, where $\|w\| = 2^l \ge 2^{4n^2}$. We construct a lattice $\Lambda_m$ of dimension $n+1$ residing in an $n+2$ dimensional space.</p>
   \[
     \Lambda_m = \begin{bmatrix}
         \mathbb{I}_n && 2^{-m}w
     \end{bmatrix}
   \]
 
-  <p>A typical vector $v$ in this lattice takes the form $(u, 2^{-m}(u,w))$ for an integer vector $u$. The main algorithm is an iterative. In each iteration, we run the LLL algorithm on $\Lambda_m$ for increasing values of the parameter $m$ ($m=0, 1, \dots, l$), we actively search for short vectors.</p>
+  <p>A typical vector $v$ in this lattice takes the form $(u, 2^{-m}(u,w))$ for an integer vector $u$. The main algorithm is an iterative. In each iteration, we run the LLL algorithm on $\Lambda_m$ for increasing values of the parameter $m$ ($m = 0, 1, \dots, l$), to search for short vectors.</p>
 
-  <h3>... Freezing the "Dangerous" Directions</h3>
+  <h3>... Freezing the "Dangerous" directions</h3>
 
   <p>As $m$ increases, the algorithm updates $\Lambda_m$ to $\Lambda_{m+1}$ by simply dividing the last coordinate of all vectors by 2. During this process, we monitor the basis vectors $v_i$.</p>
 
@@ -88,7 +90,7 @@
 
   <p>When $k \ge 1$, the first $k$ short vectors define a linear span called $W^1$, while its orthogonal complement is $W^2$. We can perfectly decompose our original weight vector as $w = w^1 + w^2$, where $w^1 \in W^1$ and $w^2 \in W^2$.</p>
 
-  <p>Reduction step:</p>
+  <p>Size Reduction:</p>
   <ul>
       <li><b>$w^1$ is already short</b>: Corollary 3.10 proves that $\|w^1\| \le 2^{t_{k+1}+1-2n}$. Because it is bounded, we don't need to reduce it.</li>
       <li><b>$w^2$ is safe to shrink</b>: Because $w^2$ lies in the orthogonal complement $W^2$, it represents directions where the inner product evaluated by the LTF is safely large.</li>
@@ -106,15 +108,13 @@
 
   <h3>... Conclusion</h3>
 
-  <p>Lemma 3.13 proves that if our initial weights are large ($\|w\| \ge 2^{4n^2+4n}$), this single iterative step guarantees that $\|w'\| \le \|w\|/2$.</p>
-
-  <p>This leads directly to the main result of the paper:</p>
+  <p>Lemma 3.13 proves that if our initial weights are large ($\|w\| \ge 2^{4n^2+4n}$), this single iterative step guarantees that $\|w'\| \le \|w\|/2$. This leads directly to the main result of the paper:</p>
 
   <blockquote>
       <b>Theorem 3.14:</b> Given a set of weights $w$ defining a threshold function $f_w$ in $n$ variables, we can find a set of weights $w'$ such that $\|w'\| \le 2^{4n^2+4n}$ and $f_w = f_{w'}$ in polynomial time.
   </blockquote>
 
-  <p>By simply applying this algorithm repeatedly, we slash the weight size by at least a factor of 2 in every step until they drop below the $O(n^2)$ bit threshold. For extremely small values of $n$, the problem collapses into a constant-variable integer linear program, which can be optimally solved in polynomial time using Lenstra's algorithm.</p>
+  <p>By simply applying this algorithm repeatedly, we slash the weight size by at least a factor of 2 in every step until they drop below the $O(n^2)$ bit threshold.</p>
 
 </body>
 </html>
