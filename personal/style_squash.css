@@ -8,7 +8,7 @@ a:hover { color: red;}
 body{
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   font-weight: 500px;
-  background-color: purple;
+  background-color: white;
 }
 
 
@@ -25,7 +25,8 @@ body{
 
 .navbar {
   width: 95%;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  border: 1pt solid black;
+  font-family: JetBrains Mono, monospace;
   font-weight: bold;
 }
 
@@ -39,7 +40,7 @@ body{
 }
 
 .navbar a:hover {
-  background-color:rgb(100,200,40);
+  background-color: plum;
 }
 
 
@@ -57,7 +58,7 @@ body{
 .content {
   width: 66%;
   padding-left: 20px;
-  background-color: orange;
+  background-color: skyblue;
 }
 
 .sidebar {
