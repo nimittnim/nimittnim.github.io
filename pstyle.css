@@ -89,3 +89,10 @@ body{
   height: 1000px;
   padding:10px;
 }
+
+.journalentry{
+  border: 1pt solid black;
+  background-color: white;
+  padding: 5%;
+  color: black
+}
