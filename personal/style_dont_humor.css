@@ -1,31 +1,57 @@
 .body{
-    padding-left: 30%;
-    padding-right: 30%;
+    margin: 0;
+    background: white;
 }
 
-.display{
-    padding: 4%;
+.layout {
+  display: flex;
+  height: 1000px;
 }
 
-.navbar {
-  width: 100%;
-  border: 1pt solid black;
-  font-family: JetBrains Mono, monospace;
-  font-weight: bold;
+
+.sidebarleft {
+  width: 30%;
+  background-color: white;
 }
 
-.navbar a {
-  padding: 0px 15px;
-  display: inline-block;
-  color: black;
-  text-decoration: none;
-  text-align: center;
-  font-size: large;
+.sidebarleft {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+  padding-right: 20px;
 }
 
-.navbar a:hover {
-  background-color:rgb(200,200,40);
+.content {
+  width: 40%;
+  padding-left: 20px;
 }
+
+.sidebar {
+  width: 30%;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+  padding-right: 20px;
+}
+
+
+
+.a {
+    position: fixed;
+    top: 5px;
+    left: 5px;
+
+    font-size: x-large;
+    text-decoration: none;
+    color: black;
+}
+
+
 
 .memothe{
   background: rgb(200,200,40);
@@ -34,3 +60,23 @@
   font-size: larger;
   font-family: 'Courier New', Courier, monospace;
 }
+
+/* .marquee {
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.marquee span {
+    display: inline-block;
+    padding-left: 100%;
+    animation: scroll 10s linear infinite;
+}
+
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+} */

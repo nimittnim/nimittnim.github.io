@@ -11,14 +11,16 @@
 <body class="body">
   <header class="site-header">
   </header>
-      <nav class="navbar">
-        <a href="../index.html">Home</a>
-        <a href="../personal.html">Personal</a>
-      </nav>
-    
-    <div class="display">
+  <a class="a" href="../personal.html">←</a>
+    <div class="layout">
+      <div class="sidebarleft" id="sidebarleft">
+        <div class="field"></div>
+      </div>
+      <div class="content" id="content">
     <h1> Dont Humo'r </h1>
-    
+    <!-- <div class="marquee">
+    <span>This text moves from right to left continuously.</span>
+    </div> -->
     <details>
       <summary><b>Context-Free Joke</b></summary>
       <div class="memothe">
@@ -260,8 +262,27 @@
       </div>
     </details>
 
-    
+      </div>
+
+      <div class="sidebar">
+      </div>
 
     </div>
+
+
+    <div class="aside">
+
+    </div>
+
+    <script>
+      const link = document.getElementById("lightSwitch");
+      const room = document.getElementById("content");
+
+      link.addEventListener("click", function (e) {
+          e.preventDefault();      
+          room.classList.toggle("dark");
+      });
+    </script>
+    
 </body>
 </html>

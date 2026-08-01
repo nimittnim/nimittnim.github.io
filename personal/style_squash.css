@@ -1,14 +1,7 @@
-a:link, a:visited, a:hover, a:active {
-  text-decoration: none;
-}
-a { color:rgb(100,200,40); }       
-a:visited { color: rgb(40, 90, 15); } 
-a:hover { color: red;}
-
 body{
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-weight: 500px;
-  background-color: white;
+  background-color: rgb(21, 165, 21);
 }
 
 
@@ -18,31 +11,114 @@ body{
   margin-bottom: 10px;
 }
 
+
 .name {
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   margin-bottom: 4px;   
+  margin-top: 0px;
+  font-style: italic;
 }
 
-.navbar {
-  width: 95%;
-  border: 1pt solid black;
-  font-family: JetBrains Mono, monospace;
-  font-weight: bold;
+.name {
+    display: inline-block;
+    animation: intro 2s ease-out forwards;
 }
 
-.navbar a {
-  padding: 0px 15px;
-  display: inline-block;
-  color: black;
+@keyframes intro {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+.a {
+    position: fixed;
+    top: 10px;
+    left: 20px;
+
+    font-size: xx-large;
+    text-decoration: none;
+    color: white;
+}
+
+
+.activities {
+    width: 100%;
+    border: 1pt solid black;
+    background-color: white;
+    padding: 10px;
+}
+
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 3px;
+    background-color: skyblue;
+}
+
+.weekday {
+    text-align: center;
+    font-weight: bold;
+    background-color: #f6d277;
+}
+
+.day {
+    min-height: 40px;
+    border: 2px solid black;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.day.empty {
+    border: none;
+}
+
+.number {
+    font-weight: bold;
+}
+
+.workout {
+    margin-top: 3px;
+    font-size: 0.9em;
+}
+
+.distance {
+    margin-top: 4px;
+    color: black;
+    font-size: 0.9em;
+}
+
+.day.easy {
+    border-left: 10px solid #158f19;
+}
+
+.day.long {
+    border-left: 10px solid #1976d2;
+}
+
+.day.tempo {
+    border-left: 10px solid #fbc02d;
+}
+
+.day.speed {
+    border-left: 10px solid #d32f2f;
+}
+
+.day.hill {
+    border-left: 10px solid #795548;
+}
+
+.day.race {
+    border-left: 10px solid #000;
+}
+
+
+.strava{
   text-decoration: none;
-  text-align: center;
-  font-size: large;
+  color: white;
 }
-
-.navbar a:hover {
-  background-color: plum;
-}
-
 
 .tagline {
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -53,43 +129,97 @@ body{
 
 .layout {
   display: flex;
+  height: 1500px;
+}
+
+.sidebarleft {
+  width: 15%;
+  border: 2pt solid black;
+}
+
+.sidebarleft {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
 }
 
 .content {
-  width: 66%;
-  padding-left: 20px;
-  background-color: skyblue;
+  width: 75%;
+  padding: 50px;
+  padding-top: 0px;
 }
 
 .sidebar {
-  width: 34%;
+  width: 10%;
+  height: 1500px;
+  border: 1pt solid black;
 }
 
 .sidebar {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  text-align: right;
-  padding-right: 20px;
-}
-
-.sidebar img {
-  display: block;
-  margin-left: auto;
+  text-align: center;
+  background-color: cornflowerblue;
 }
 
 
-.row {
-  display: flex;
-  justify-content: flex-end; 
-  gap: 10px;
+.track {
+    width: 100%;
+    height: 100%;
+    background: #c32f2f;
+    display: flex;
 }
 
-.column {
-  width: 40%;
+.lane {
+    flex: 1;
+    border-left: 3px solid white;
 }
 
-.container{
-  padding: 10px;
+.lane:last-child {
+    border-right: 3px solid white;
 }
+
+.pb-table {
+    border-collapse: collapse;
+    margin: 1em 0;
+}
+
+.pb-table th,
+.pb-table td {
+    padding: 0.4em 1.2em;
+    text-align: left;
+}
+
+.pb-table th {
+    border-bottom: 2px solid #444;
+}
+
+.pb-table td {
+    border-bottom: 1px solid #ddd;
+}
+
+#tooltip {
+    position: absolute;
+    display: none;
+
+    width: 240px;
+
+    background: white;
+    color: black;
+
+    border: 1px solid black;
+
+    padding: 12px;
+
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+
+    pointer-events: none;
+
+    z-index: 1000;
+
+    font-size: 0.9em;
+}
+
 
