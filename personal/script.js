@@ -34,3 +34,4 @@ document.querySelectorAll(".day").forEach(day => {
     });
 
 });
+

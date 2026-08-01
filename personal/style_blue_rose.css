@@ -1,8 +1,8 @@
 a:link, a:visited, a:hover, a:active {
   text-decoration: none;
 }
-a { color: blue; }       
-a:visited { color: blue; } 
+a { color: black; }       
+a:visited { color: black; } 
 a:hover { color: red;}
 
 body{
@@ -10,13 +10,17 @@ body{
   font-weight: 500px;
   padding-left: 20%;
   padding-right: 20%;
-  background-color: red;
+  background-color: white;
 }
 
+.a {
+    position: fixed;
+    top: 10px;
+    left: 20px;
 
-
-.navbar{
-  background-color: white;
+    font-size: xx-large;
+    text-decoration: none;
+    color: white;
 }
 
 
@@ -29,7 +33,7 @@ body{
 .name {
   font-family: Verdana, sans-serif;
   margin-bottom: 4px; 
-  color: red;  
+  color: black;  
 }
 
 .tagline {
@@ -37,26 +41,6 @@ body{
   margin-top: 0;
   font-weight: normal;       
   font-size: 15px;
-}
-
-.navbar {
-  width: 100%;
-  font-family: JetBrains Mono, monospace;
-  font-weight: bold;
-  border: 1pt solid black;
-}
-
-.navbar a {
-  padding: 0px 15px;
-  display: inline-block;
-  color: black;
-  text-decoration: none;
-  text-align: center;
-  font-size: large;
-}
-
-.navbar a:hover {
-  background-color:red;
 }
 
 

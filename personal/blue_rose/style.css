@@ -8,6 +8,13 @@ body{
   padding-left: 17%;
 }
 
-a { color:black; }       
-a:visited { color: black; } 
-a:hover { color: red;}
+.a2 {
+    position: fixed;
+    top: 10px;
+    left: 20px;
+
+    font-size: xx-large;
+    text-decoration: none;
+    color: black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
