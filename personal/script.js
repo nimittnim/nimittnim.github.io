@@ -25,8 +25,21 @@ document.querySelectorAll(".day").forEach(day => {
 
     day.addEventListener("mousemove", e => {
 
-        tooltip.style.left = (e.pageX + 15) + "px";
-        tooltip.style.top = (e.pageY + 15) + "px";
+        const offset = 15;
+
+        let left = e.pageX + offset;
+        let top = e.pageY + offset;
+
+        if (left + tooltip.offsetWidth > window.scrollX + window.innerWidth) {
+            left = e.pageX - tooltip.offsetWidth - offset;
+        }
+
+        if (top + tooltip.offsetHeight > window.scrollY + window.innerHeight) {
+            top = e.pageY - tooltip.offsetHeight - offset;
+        }
+
+        tooltip.style.left = left + "px";
+        tooltip.style.top = top + "px";
     });
 
     day.addEventListener("mouseleave", () => {
