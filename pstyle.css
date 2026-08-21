@@ -1,9 +1,9 @@
 a:link, a:visited, a:hover, a:active {
   text-decoration: none;
 }
-a { color: white; }       
-a:visited { color:white; } 
-a:hover { color: rgb(200,100,100);}
+a { color: black; }       
+a:visited { color:black; } 
+a:hover { color: blue}
 
 body{
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -11,7 +11,7 @@ body{
 }
 
 body{
-  background: blue;
+  background: white;
 }
 
 
@@ -37,7 +37,8 @@ body{
   width: 100%;
   font-family: JetBrains Mono, monospace;
   font-weight: bold;
-  background-color: rgb(200,100,100);
+  border: 1pt solid black;
+  /* background-color: rgb(200,100,100); */
 }
 
 .navbar a {
@@ -50,7 +51,8 @@ body{
 }
 
 .navbar a:hover {
-  background-color: white;
+  background-color: blue;
+  color: white
 }
 
 .layout {
@@ -78,14 +80,14 @@ body{
 }
 
 .personal_container{
-  background-color: blue;
+  background-color: white;
   padding: 10px;
   height: 1000px;
-  color: white;
+  /* color: white; */
 }
 
 .personal_aside{
-  background-color: blue;
+  background-color: white;
   height: 1000px;
   padding:10px;
 }
