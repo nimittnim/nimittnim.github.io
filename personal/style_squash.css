@@ -81,18 +81,23 @@ body{
 }
 
 .easy{
-  background-color: greenyellow;
+  background-color: rgb(213, 246, 164);
 }
 
 
 .race{
-  background-color: aqua;
+  background-color: rgb(169, 219, 246);
 }
 
-.tempo {
-  background-color: rgb(237, 112, 112);
+.speed_repeats {
+  background-color: rgb(233, 144, 144);
+}
+
+.goal_pace_repeats {
+  background-color: rgb(238, 187, 234);
 }
 
 .long {
-  background-color: rosybrown;
+  background-color: rgb(211, 169, 169);
 }
+
