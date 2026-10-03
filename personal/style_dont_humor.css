@@ -1,59 +1,24 @@
-body {
-    margin: 0;
-    background: white;
-    overflow: hidden;   
-}
-
-.layout {
-    display: flex;
-    height: 100vh;      
-}
-
-.sidebarleft {
-    width: 30%;
-    overflow: hidden;  
-}
-
-.content {
-    width: 40%;
-    overflow-y: auto;  
-    padding: 20px;
-    background: white;
-}
-
-.sidebar {
-    width: 30%;
-    overflow: hidden;   /* Never scroll */
-}
-
-.sidebar {
-  width: 30%;
-}
-
-.sidebar {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  text-align: right;
-  padding-right: 20px;
-}
-
-.a {
-    position: fixed;
-    top: 10px;
-    left: 10px;
-
-    font-size: xx-large;
-    text-decoration: none;
-    color: black;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-
-.memothe{
-  /* background: rgb(200,200,40); */
-  padding: 3%;
-  border: 1pt solid black;
-  font-size: larger;
+body{
   font-family: 'Courier New', Courier, monospace;
 }
+
+@media (min-width: 1024px) {
+  body {
+    padding-left: 35%;
+    padding-right: 35%;
+  }
+}
+
+.memothe{
+    border: 1pt solid black;
+    padding-left:4%;
+    padding-right:4%;
+}
+
+
+a:link, a:visited, a:hover, a:active {
+    text-decoration: none;
+}
+
+a { color: blue; }       
+a:hover { color: rgb(255, 0, 0);}
